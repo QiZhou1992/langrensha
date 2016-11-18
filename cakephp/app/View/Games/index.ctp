@@ -21,5 +21,5 @@
 </table>
 <?php 
 echo $this->Form->create(null,['url'=>['controller'=>'Games','action'=>'index']]);
-echo $this->Form->end(__('退出游戏'));
+echo $this->Form->end(__('刷新'));
 ?>
