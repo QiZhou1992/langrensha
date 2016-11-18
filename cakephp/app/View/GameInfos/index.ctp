@@ -1,5 +1,9 @@
 <h1> 狼人杀  </h1>
 <h1><?php echo "本局游戏"+$gameId; ?>
+<?php 
+echo $this->Form->create(null,['url'=>['controller'=>'GameInfos','action'=>'index','game_id'=>$gameId]]);
+echo $this->Form->end(__('刷新'));
+?>
 <?php if($role == 0){ ?>
 <table>
 	<tr>
@@ -52,25 +56,27 @@
 </table>
 <?php 
 echo $this->Form->create(null,['url'=>['controller'=>'GameInfos','action'=>'win','game_id'=>$gameId]]);
-echo $this->Form->button('狼人赢');
-echo $this->Form->end();
+echo $this->Form->end(__('狼人胜利'));
 ?>
 <?php 
 echo $this->Form->create(null,['url'=>['controller'=>'GameInfos','action'=>'lose','game_id'=>$gameId]]);
-echo $this->Form->button('神民赢');
-echo $this->Form->end();
+echo $this->Form->end(__('神民胜利'));
 ?>
 <?php } else{ ?>
 <table>
 	<tr>
-		<th>号码</th>
-		<th>押注</th>
+		<th>user id</th>
+		<th>bet </th>
 	</tr>
 	<?php foreach ($allInfos as $info): ?>
 		<tr>
-			<td><?php echo $info['GameInfo']['number'] ?>
+			<td><?php echo $info['GameInfo']['id'] ?>
 			<td><?php echo $info['GameInfo']['bet'] ?>
 		</tr>
 	<?php endforeach; ?>
 </table>
+<?php 
+echo $this->Form->create(null,['url'=>['controller'=>'Game','action'=>'index']]);
+echo $this->Form->end(__('退出游戏'));
+?>
 <?php } ?>

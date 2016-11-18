@@ -81,6 +81,21 @@ class GameInfosController extends AppController {
 		);
 		$allGameInfos=$this->GameInfo->find('all',$params1);
 		$number=count($allGameInfos);
+		$params2=array(
+					'fields'=>array('rank','username'),
+					'conditions'=>array('id'=>$userId)
+				);
+		$UserModel = new User();
+		$users=$UserModel->find('all',$params2);
+		$currentRank=$users[0]['User']['rank'];
+		$currentRank=$currentRank-2;
+		$rankArray=array();
+		$countCoin=0;
+		while(($countCoin<=10) && ($countCoin<=$currentRank)){
+			array_push($rankArray,$countCoin);
+			$countCoin=$countCoin+1;
+		}
+		$this->set('Coins',$rankArray);
 		if($number != 0){
 			return $this->redirect(array('action'=>'index','game_id'=>$gameId));
 		}
