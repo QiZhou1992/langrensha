@@ -19,3 +19,7 @@
 		</tr>
 	<?php endforeach; ?>
 </table>
+<?php 
+echo $this->Form->create(null,['url'=>['action'=>'index'，'type'=>'get']);
+echo $this->Form->end(__('刷新')); 
+?>
