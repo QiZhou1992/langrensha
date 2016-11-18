@@ -63,12 +63,12 @@ echo $this->Form->end();
 <?php } else{ ?>
 <table>
 	<tr>
-		<th>user id</th>
-		<th>bet </th>
+		<th>号码</th>
+		<th>押注</th>
 	</tr>
 	<?php foreach ($allInfos as $info): ?>
 		<tr>
-			<td><?php echo $info['GameInfo']['id'] ?>
+			<td><?php echo $info['GameInfo']['number'] ?>
 			<td><?php echo $info['GameInfo']['bet'] ?>
 		</tr>
 	<?php endforeach; ?>
