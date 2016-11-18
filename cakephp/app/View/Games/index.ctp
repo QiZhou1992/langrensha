@@ -20,6 +20,6 @@
 	<?php endforeach; ?>
 </table>
 <?php 
-echo $this->Form->create(null,['url'=>['action'=>'index'，'type'=>'get']);
-echo $this->Form->end(__('刷新')); 
+echo $this->Form->create(null,['url'=>['controller'=>'Games','action'=>'index']]);
+echo $this->Form->end(__('退出游戏'));
 ?>
