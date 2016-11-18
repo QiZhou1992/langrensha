@@ -76,7 +76,7 @@ echo $this->Form->end(__('神民胜利'));
 	<?php endforeach; ?>
 </table>
 <?php 
-echo $this->Form->create(null,['url'=>['controller'=>'Game','action'=>'index']]);
+echo $this->Form->create(null,['url'=>['controller'=>'Games','action'=>'index']]);
 echo $this->Form->end(__('退出游戏'));
 ?>
 <?php } ?>
